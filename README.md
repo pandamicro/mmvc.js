@@ -9,22 +9,18 @@ These variables can then be observed by a Callback object which can simulate a f
 
 * **Example**
 ```javascript
-var view = {
-    y : 0
-    levelChanged: function(value) {
-        this.y = value;
+    var view = {
+        y : 0
+        levelChanged: function(value) {
+            this.y = value;
+        }
     }
-}
-
-var model = {
-    level : 0
-}
-
-mmvc.makeModel(model, ['a']);
-
-var levelChangedCallback = new Callback(view.levelChanged, view);
-model.observe('a', levelChangedCallback);
-
-model.setlevel(3);
-// Now view.y equals to 3 also
+    var model = {
+        level : 0
+    }
+    mmvc.makeModel(model, ['a']);
+    var levelChangedCallback = new Callback(view.levelChanged, view);
+    model.observe('a', levelChangedCallback);
+    model.setlevel(3);
+    // Now view.y equals to 3 also
 ```
