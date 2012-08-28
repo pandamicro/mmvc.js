@@ -18,9 +18,9 @@ These variables can then be observed by a Callback object which can simulate a f
     var model = {
         level : 0
     }
-    mmvc.makeModel(model, ['a']);
+    mmvc.makeModel(model, ['level']);
     var levelChangedCallback = new Callback(view.levelChanged, view);
-    model.observe('a', levelChangedCallback);
+    model.observe('level', levelChangedCallback);
     model.setlevel(3);
     // Now view.y equals to 3 too
 ```
